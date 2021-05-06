@@ -10,13 +10,13 @@ const Detail = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
         .then(response => response.json())
         .then(json => setDetail(json))
-    }, [])
+    }, [id])
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
         .then(response => response.json())
         .then(json => setComments(json))
-    }, [])
+    }, [id])
     const {title, body} = detail
     return (
         <div>
